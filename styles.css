@@ -1,0 +1,95 @@
+/* styles.css - Shared by all pages */
+body {
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background: #002244;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+nav {
+  background: #001d36;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  color: #002244;
+}
+
+a {
+  text-decoration: none;
+  color: #ff6347;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.story {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ff6347;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  margin: 3rem 0 1rem;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.paypal-button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: #0070ba;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.paypal-button:hover {
+  background-color: #005f99;
+  text-decoration: none;
+}
+
+.kofi-button {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.kofi-button iframe {
+  border: none;
+  height: 36px;
+}
