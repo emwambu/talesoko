@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Talesoko</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Talesoko Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="add-story">
+            <h2>Add a New Story</h2>
+            <input type="text" id="story-title" placeholder="Title">
+            <textarea id="story-content" placeholder="Your story..."></textarea>
+            <button onclick="submitStory()">Publish</button>
+        </section>
+
+        <section id="stories">
+            <h2>Your Stories</h2>
+            <div id="content"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Load stories on page load
+        document.addEventListener('DOMContentLoaded', loadStories);
+
+        function submitStory() {
+            const title = document.getElementById('story-title').value;
+            const content = document.getElementById('story-content').value;
+            addStory(title, content);
+            alert("Story published!");
+        }
+    </script>
+</body>
+</html>
