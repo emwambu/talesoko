@@ -159,7 +159,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="#" onclick="toggleAuthModal()">Login</a></li>
+        <li id="auth-link"><a href="#" onclick="toggleAuthModal()">Login</a></li>
       </ul>
     </nav>
   </header>
@@ -173,6 +173,7 @@
       <input type="password" id="password" placeholder="Password" />
       <button onclick="login()">Login</button>
       <button onclick="signup()">Sign Up</button>
+      <button onclick="loginWithGoogle()">Sign in with Google</button>
     </div>
   </div>
 
@@ -199,7 +200,7 @@
       </div>
     </section>
 
-    <!-- Blog Section (from blog.html) -->
+    <!-- Blog Section -->
     <section class="blog-section">
       <h2>Latest Blog Posts</h2>
       <div class="blog-post">
