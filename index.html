@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
 
-  <!-- Firebase SDK (Modular version) -->
+  <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
     import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
@@ -51,7 +51,35 @@
   </script>
 
   <style>
-    /* Basic modal and responsive styling */
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
     .modal {
       display: none;
       position: fixed;
@@ -60,25 +88,65 @@
       justify-content: center;
       align-items: center;
     }
+
     .modal-content {
-      background: #fff;
+      background: white;
       padding: 1.5rem;
       border-radius: 8px;
       width: 90%;
       max-width: 400px;
-      text-align: center;
     }
+
     .modal input {
       width: 90%;
       margin: 0.5rem 0;
       padding: 0.5rem;
     }
+
     .modal button {
       margin: 0.5rem;
     }
+
     .close {
       float: right;
       cursor: pointer;
+    }
+
+    #hero {
+      background: #eee;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .featured-stories, .blog-section {
+      padding: 2rem;
+      background-color: #fff;
+      margin-top: 1rem;
+    }
+
+    .story-card, .blog-post {
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 700px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .blog-post h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    img.ko-fi {
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -96,7 +164,7 @@
     </nav>
   </header>
 
-  <!-- Firebase Login/Signup Modal -->
+  <!-- Auth Modal -->
   <div id="auth-modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeAuthModal()">&times;</span>
@@ -109,14 +177,40 @@
   </div>
 
   <main>
+    <!-- Hero -->
     <section id="hero">
       <h2>Welcome to Talesoko</h2>
-      <p>Share and discover amazing stories.</p>
+      <p>Write. Share. Inspire.</p>
       <a href="https://ko-fi.com/emw_5k" target="_blank">
-        <img src="https://storage.ko-fi.com/cdn/kofi5.png?v=3" height="36" alt="Support me on Ko-fi">
+        <img class="ko-fi" src="https://storage.ko-fi.com/cdn/kofi5.png?v=3" height="36" alt="Support me on Ko-fi">
       </a>
     </section>
-    <div id="content"></div>
+
+    <!-- Featured Stories Section -->
+    <section class="featured-stories">
+      <h2>Featured Stories</h2>
+      <div class="story-card">
+        <h3>Story Title 1</h3>
+        <p>A suspenseful tale of love and betrayal set in a small village.</p>
+      </div>
+      <div class="story-card">
+        <h3>Story Title 2</h3>
+        <p>A modern romance with a twist—will they find each other again?</p>
+      </div>
+    </section>
+
+    <!-- Blog Section (from blog.html) -->
+    <section class="blog-section">
+      <h2>Latest Blog Posts</h2>
+      <div class="blog-post">
+        <h3>Why Storytelling Still Matters in 2025</h3>
+        <p>In a world of fast tech and AI, stories connect us more than ever before. Here's why you should tell yours.</p>
+      </div>
+      <div class="blog-post">
+        <h3>How I Wrote My First Telenovela Script</h3>
+        <p>It all began with an idea on a quiet night in Nairobi. Here's the journey...</p>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -132,7 +226,6 @@
       document.getElementById("auth-modal").style.display = "none";
     }
 
-    // Close modal when clicking outside
     window.onclick = function(event) {
       const modal = document.getElementById("auth-modal");
       if (event.target == modal) {

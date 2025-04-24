@@ -1,31 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Talesoko</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Talesoko</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    #about {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    .ko-fi {
+      margin-top: 1rem;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Talesoko</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are a passionate team bringing you the best stories from around the world.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Talesoko. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+  <header>
+    <h1>Talesoko</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Talesoko</h2>
+      <p>
+        Talesoko is a digital storytelling platform that celebrates creativity and connection through narrative. 
+        Whether you're a reader or a writer, our space invites you to discover captivating telenovelas, 
+        heartfelt fiction, and community-driven stories.
+      </p>
+      <p>
+        We’re proudly independent and student-run, born from passion and built with purpose. 
+        Our mission? To inspire, entertain, and empower storytellers across the globe.
+      </p>
+      <p>Support the project and help us grow by buying us a coffee!</p>
+      <a href="https://ko-fi.com/emw_5k" target="_blank">
+        <img class="ko-fi" src="https://storage.ko-fi.com/cdn/kofi5.png?v=3" height="36" alt="Support me on Ko-fi" />
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Talesoko. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
