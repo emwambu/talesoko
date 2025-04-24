@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Jane Doe",
+    "bio": "Jane is an award-winning author who specializes in fantasy and adventure stories.",
+    "profile_image": "images/authors/jane_doe.jpg",
+    "social_links": {
+      "twitter": "https://twitter.com/jane_doe",
+      "website": "https://janedoe.com"
+    }
+  },
+  {
+    "id": 2,
+    "name": "John Smith",
+    "bio": "John writes heartwarming romance stories with a twist of mystery.",
+    "profile_image": "images/authors/john_smith.jpg",
+    "social_links": {
+      "twitter": "https://twitter.com/john_smith",
+      "website": "https://johnsmith.com"
+    }
+  }
+]

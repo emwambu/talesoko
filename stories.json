@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "The Lost Kingdom",
+    "summary": "A thrilling adventure of a young warrior on a quest to discover a hidden kingdom.",
+    "author": "Jane Doe",
+    "date": "2025-04-20",
+    "category": "Adventure",
+    "tags": ["Fantasy", "Action", "Mystery"],
+    "link": "story1.html",
+    "image": "images/story1.jpg",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "The Heart's Secret",
+    "summary": "A romantic tale of two lovers separated by fate and time, struggling to find each other again.",
+    "author": "John Smith",
+    "date": "2025-04-15",
+    "category": "Romance",
+    "tags": ["Love", "Drama", "Mystery"],
+    "link": "story2.html",
+    "image": "images/story2.jpg",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "Into the Darkness",
+    "summary": "A psychological thriller about a detective uncovering deep secrets in the heart of the city.",
+    "author": "Emily Johnson",
+    "date": "2025-04-18",
+    "category": "Thriller",
+    "tags": ["Mystery", "Suspense", "Crime"],
+    "link": "story3.html",
+    "image": "images/story3.jpg",
+    "featured": true
+  }
+]

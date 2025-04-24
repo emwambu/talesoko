@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Adventure",
+    "description": "Exciting stories filled with quests, heroes, and daring adventures."
+  },
+  {
+    "id": 2,
+    "name": "Romance",
+    "description": "Heartfelt stories about love, passion, and relationships."
+  },
+  {
+    "id": 3,
+    "name": "Thriller",
+    "description": "Intense, suspenseful stories that keep readers on the edge of their seats."
+  }
+]
