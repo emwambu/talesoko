@@ -3,72 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talesoko | Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico">
-    <style>
-        /* Mobile menu (hidden by default) */
-        .mobile-menu-btn { display: none; }
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                color: white;
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-            nav ul { 
-                flex-direction: column;
-                display: none;
-            }
-            nav.active ul { display: flex; }
-        }
-    </style>
+    <title>Talesoko - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
     <header>
-        <button class="mobile-menu-btn">☰</button>
         <h1>Talesoko</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="body.html">Stories</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li id="auth-link"><a href="#" onclick="toggleAuthModal()">Login</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Auth Modal (Login/Signup) -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2>Login / Sign Up</h2>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <button onclick="signup()">Sign Up</button>
+        </div>
+    </div>
+
     <main>
-        <section class="hero">
-            <h2>Write. Share. Inspire.</h2>
-            <button id="cta-btn">Start Your Story</button>
+        <section id="hero">
+            <h2>Welcome to Talesoko</h2>
+            <p>Share and discover amazing stories.</p>
         </section>
+        <div id="content"></div>
     </main>
+
     <footer>
-        <p>© 2024 Talesoko. All rights reserved.</p>
+        <p>&copy; 2023 Talesoko. All rights reserved.</p>
     </footer>
-
-    <!-- Embedded JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
-            document.querySelector('nav').classList.toggle('active');
-        });
-
-        // CTA Button Action
-        document.getElementById('cta-btn').addEventListener('click', () => {
-            alert("Let's create your story! (Redirect to submission page in a real app.)");
-        });
-
-        // Simulate form validation (for contact.html if needed)
-        if (document.querySelector('.contact-form')) {
-            document.querySelector('.contact-form form').addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Message sent! (Simulated)');
-                e.target.reset();
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
