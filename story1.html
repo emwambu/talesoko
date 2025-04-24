@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lost Kingdom - TaleSoko</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    .story-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .story-meta {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .story-content {
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    
+    .story-image {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      border-radius: 5px;
+    }
+    
+    .story-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .tag {
+      background: #eee;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    
+    .story-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+    
+    .comments-section {
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TaleSoko</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="auth-link"><a href="#" onclick="toggleAuthModal()">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Auth Modal -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAuthModal()">&times;</span>
+      <h2>Login / Sign Up</h2>
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <button onclick="signup()">Sign Up</button>
+    </div>
+  </div>
+
+  <main>
+    <article class="card">
+      <div class="story-header">
+        <h2>The Lost Kingdom</h2>
+        <div class="story-meta">
+          <span>By Jane Doe</span> • 
+          <span>April 20, 2025</span> • 
+          <span>Adventure</span>
+        </div>
+        <div class="story-tags">
+          <span class="tag">Fantasy</span>
+          <span class="tag">Action</span>
+          <span class="tag">Mystery</span>
+        </div>
+      </div>
+      
+      <img src="images/story1.jpg" alt="The Lost Kingdom" class="story-image">
+      
+      <div class="story-content">
+        <p>The sun was setting over the mountains as Kira adjusted her backpack. The ancient map in her hands promised a kingdom lost to time, hidden somewhere in these valleys.</p>
+        
+        <p>"They said I was chasing legends," she whispered to herself, tracing the faded lines on the parchment. "But I know it's real."</p>
+        
+        <p>Three days into her journey, the terrain had grown increasingly difficult. Steep cliffs and dense forests blocked her path at every turn. But Kira was determined. The lost kingdom of Azoria was said to contain treasures beyond imagination—not gold or jewels, but knowledge from a civilization far advanced for its time.</p>
+        
+        <p>As night fell, she made camp beside a small stream. The stars above seemed to form patterns she'd never noticed before, almost as if they were guiding her. Sleep came fitfully, filled with dreams of ancient halls and whispered secrets.</p>
+        
+        <p>Morning brought a strange mist that clung to the valley floor. Kira packed quickly and continued her trek, following what appeared to be an old, overgrown path. Hours passed as she pushed through thick vegetation.</p>
+        
+        <p>Then, suddenly, the forest opened up. Before her stood a massive stone archway, half-collapsed but unmistakably crafted by human hands. Symbols she didn't recognize were carved into its surface, glowing faintly in the afternoon light.</p>
+        
+        <p>"Impossible," she breathed, reaching out to touch the ancient stone. As her fingers made contact, the ground beneath her feet began to tremble...</p>
+        
+        <p><em>To be continued in Chapter 2...</em></p>
+      </div>
+      
+      <div class="story-navigation">
+        <a href="index.html">← Back to Stories</a>
+        <a href="#">Chapter 2 →</a>
+      </div>
+      
+      <div class="comments-section">
+        <h3>Comments</h3>
+        <p>Login to leave a comment</p>
+        <!-- Comments will be loaded dynamically -->
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 TaleSoko. All rights reserved.</p>
+    <p class="privacy-link"><a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    function toggleAuthModal() {
+      document.getElementById("auth-modal").style.display = "flex";
+    }
+
+    function closeAuthModal() {
+      document.getElementById("auth-modal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("auth-modal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
