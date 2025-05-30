@@ -1,156 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Talesoko - Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" />
-
-  <!-- Firebase SDK -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyD_jj3fpq2VBpSVvTemxkxOjnLqct7Nd9c",
-      authDomain: "talesoko-f8a98.firebaseapp.com",
-      projectId: "talesoko-f8a98",
-      storageBucket: "talesoko-f8a98.firebasestorage.app",
-      messagingSenderId: "812197190940",
-      appId: "1:812197190940:web:492ccdc8811f256f442ed9",
-      measurementId: "G-LKHPDCV9HL"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    window.login = async function() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        alert("Logged in!");
-        closeAuthModal();
-      } catch (err) {
-        alert("Login failed: " + err.message);
-      }
-    }
-
-    window.signup = async function() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        alert("Account created!");
-        closeAuthModal();
-      } catch (err) {
-        alert("Signup failed: " + err.message);
-      }
-    }
-  </script>
-
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background: #222;
-      color: white;
-      padding: 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      gap: 1rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 400px;
-    }
-
-    .modal input {
-      width: 90%;
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-    }
-
-    .modal button {
-      margin: 0.5rem;
-    }
-
-    .close {
-      float: right;
-      cursor: pointer;
-    }
-
-    #hero {
-      background: #eee;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .featured-stories, .blog-section {
-      padding: 2rem;
-      background-color: #fff;
-      margin-top: 1rem;
-    }
-
-    .story-card, .blog-post {
-      background: #fafafa;
-      border-radius: 8px;
-      padding: 1rem;
-      margin: 1rem auto;
-      max-width: 700px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .blog-post h3 {
-      margin-top: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #222;
-      color: white;
-      margin-top: 2rem;
-    }
-
-    img.ko-fi {
-      margin-top: 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
 </head>
-
 <body>
   <header>
     <h1>Talesoko</h1>
@@ -169,16 +25,16 @@
     <div class="modal-content">
       <span class="close" onclick="closeAuthModal()">&times;</span>
       <h2>Login / Sign Up</h2>
-      <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Password" />
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
       <button onclick="login()">Login</button>
       <button onclick="signup()">Sign Up</button>
       <button onclick="loginWithGoogle()">Sign in with Google</button>
+      <button onclick="resetPassword()">Reset Password</button>
     </div>
   </div>
 
   <main>
-    <!-- Hero -->
     <section id="hero">
       <h2>Welcome to Talesoko</h2>
       <p>Write. Share. Inspire.</p>
@@ -187,7 +43,6 @@
       </a>
     </section>
 
-    <!-- Featured Stories Section -->
     <section class="featured-stories">
       <h2>Featured Stories</h2>
       <div class="story-card">
@@ -200,7 +55,6 @@
       </div>
     </section>
 
-    <!-- Blog Section -->
     <section class="blog-section">
       <h2>Latest Blog Posts</h2>
       <div class="blog-post">
@@ -218,21 +72,8 @@
     <p>&copy; 2024 Talesoko. All rights reserved.</p>
   </footer>
 
-  <script>
-    function toggleAuthModal() {
-      document.getElementById("auth-modal").style.display = "flex";
-    }
-
-    function closeAuthModal() {
-      document.getElementById("auth-modal").style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById("auth-modal");
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
